@@ -15,10 +15,9 @@ Demo video link: https://www.bilibili.com/video/BV1SY411H7sb/
 
 3.在main.py的userpage方法中，当请求为"GET"时进行了如下修改：
 - 添加了script脚本：
-  
+···
     page += '<script type="text/javascript" src="static/js/jquery.js"></script>'
           page += '''
-          
                    <script>
                    
                        $(function(){
@@ -90,6 +89,8 @@ Demo video link: https://www.bilibili.com/video/BV1SY411H7sb/
                    </script>
                    
                   '''
+···
 - 为p标签，“熟悉”和“不熟悉”按钮添加了id：
-
+···
     page += '<p id="p_%d" class="new-word" > <a class="btn btn-light" id="word_%d" href="%s" role="button">%s</a>(<a id="freq_%d" title="%s" >%d</a>) <a class="btn btn-success" href="javascript:void(0);" onclick="familiar(%d)" role="button">熟悉</a> <a class="btn btn-warning" href="javascript:void(0);" onclick="unfamiliar(%d)" role="button">不熟悉</a> <a class="btn btn-danger" href="del(%d)" role="button">删除</a> </p>\n ' % (sorted_lst.index(x), sorted_lst.index(x), youdao_link(word), word, sorted_lst.index(x), '; '.join(d[word]), freq, sorted_lst.index(x), sorted_lst.index(x), sorted_lst.index(x))
+···
