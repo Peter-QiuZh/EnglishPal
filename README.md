@@ -10,8 +10,8 @@ Demo video link: https://www.bilibili.com/video/BV1SY411H7sb/
 1.整个项目中加入了jquery.js
 
 2.修改了main.py的familiar和unfamiliar方法的返回类型：
-- original: return redirect(url_for('userpage', username=username))
-- now: return "success"
+- original: ```return redirect(url_for('userpage', username=username))```
+- now: ```return "success"```
 
 3.在main.py的userpage方法中，当请求为"GET"时进行了如下修改：
 - 添加了script脚本：
