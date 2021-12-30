@@ -17,45 +17,45 @@ Demo video link: https://www.bilibili.com/video/BV1SY411H7sb/
 - 添加了script脚本：
 
 ```
-    page += '<script type="text/javascript" src="static/js/jquery.js"></script>'
-          page += '''
-                   <script>
-                       $(function(){
-                          familiar(index);
-                          unfamiliar(index);            
-                       });
-                       function familiar(index) {               
-                          var username = $("#username").text();                       
-                          var word = $("#word_" + index).text();                          
-                          var freq = $("#freq_" + index).text();                          
-                          $.ajax({                          
-                              type:"get",
-                              url:"/" + username + "/" + word + "/familiar",                             
-                              success:function(resp){                            
-                                  var new_freq = freq - 1;                                 
-                                  if(new_freq <1) {                                 
-                                      $("#p_" + index).remove();                                    
-                                  } else {                                  
-                                      $("#freq_" + index).text(new_freq);                                      
-                                  }                                  
-                              }                             
-                          });                        
-                       }
-                       function unfamiliar(index) {                       
-                          var username = $("#username").text();                          
-                          var word = $("#word_" + index).text();                          
-                          var freq = $("#freq_" + index).text();                          
-                          $.ajax({                         
-                              type:"get",                             
-                              url:"/" + username + "/" + word + "/unfamiliar",                              
-                              success:function(resp){                              
-                                  var new_freq = parseInt(freq) + 1;                                 
-                                  $("#freq_" + index).text(new_freq);                                
-                              }                            
-                          });                          
-                       }                      
-                   </script>                   
-                  '''
+  page += '<script type="text/javascript" src="static/js/jquery.js"></script>'
+  page += '''
+           <script>
+               $(function(){
+                  familiar(index);
+                  unfamiliar(index);            
+               });
+               function familiar(index) {               
+                  var username = $("#username").text();                       
+                  var word = $("#word_" + index).text();                          
+                  var freq = $("#freq_" + index).text();                          
+                  $.ajax({                          
+                      type:"get",
+                      url:"/" + username + "/" + word + "/familiar",                             
+                      success:function(resp){                            
+                          var new_freq = freq - 1;                                 
+                          if(new_freq <1) {                                 
+                              $("#p_" + index).remove();                                    
+                          } else {                                  
+                              $("#freq_" + index).text(new_freq);                                      
+                          }                                  
+                      }                             
+                  });                        
+               }
+               function unfamiliar(index) {                       
+                  var username = $("#username").text();                          
+                  var word = $("#word_" + index).text();                          
+                  var freq = $("#freq_" + index).text();                          
+                  $.ajax({                         
+                      type:"get",                             
+                      url:"/" + username + "/" + word + "/unfamiliar",                              
+                      success:function(resp){                              
+                          var new_freq = parseInt(freq) + 1;                                 
+                          $("#freq_" + index).text(new_freq);                                
+                      }                            
+                  });                          
+               }                      
+           </script>                   
+          '''
 ```
 - 为p标签，“熟悉”和“不熟悉”按钮添加了id：
 
